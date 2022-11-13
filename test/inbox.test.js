@@ -12,16 +12,16 @@ class Car {
     return 'driving'
   }
 }
-let car
-beforeEach(() => {
-  car = new Car()
+let account
+beforeEach(async () => {
+  // Get a list of all accounts
+  // use one of those accounts to deploy the contract
+  const accounts = await web3.eth.getAccounts()
+  account = accounts[0]
 })
 
 describe('Car', () => {
-  it('parking the car', () => {
-    assert.equal(car.park(), 'stopped')
-  })
-  it('car is driving', () => {
-    assert(car.drive(), 'driving')
+  it('deploying contract', () => {
+    console.log(account)
   })
 })
