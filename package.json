@@ -12,11 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
-    "ganache-cli": "^6.12.2",
     "mocha": "^10.1.0",
     "prettier": "^2.7.1",
     "prettier-plugin-solidity": "^1.0.0-rc.1",
     "solc": "^0.8.17",
     "web3": "^1.8.1"
+  },
+  "devDependencies": {
+    "ganache": "^7.5.0",
+    "ganache-cli": "^6.12.2"
   }
 }
