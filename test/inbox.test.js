@@ -12,13 +12,16 @@ class Car {
     return 'driving'
   }
 }
+let car
+beforeEach(() => {
+  car = new Car()
+})
+
 describe('Car', () => {
   it('parking the car', () => {
-    const car = new Car()
     assert.equal(car.park(), 'stopped')
   })
   it('car is driving', () => {
-    const car = new Car()
     assert(car.drive(), 'driving')
   })
 })
