@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "deploy": "node deploy.js",
     "compile": "solcjs --bin --abi --include-path node_modules/ --base-path . -o . ./contracts/Inbox.sol"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.1",
     "dotenv": "^16.0.3",
     "mocha": "^10.1.0",
     "prettier": "^2.7.1",
