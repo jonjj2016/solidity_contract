@@ -18,6 +18,7 @@ beforeEach(async () => {
   inbox = await new web3.eth.Contract(JSON.parse(abi))
     .deploy({
       data: biteCode,
+      arguments: ['Yooo initial'],
     })
     .send({ from: accounts[0], gas: '1000000' })
 })
@@ -25,6 +26,11 @@ beforeEach(async () => {
 describe('Inbox Contract test', () => {
   it('deploying contract', () => {
     assert.ok(inbox.options.address)
+  })
+  it('making initialization by providing default value for message', async () => {
+    const defaultMessage = await inbox.methods.message().call()
+    console.log('cdkjsdkchdbs jhvdscb kshdvc', defaultMessage)
+    assert.equal(defaultMessage, 'Yooo initial')
   })
   it('making transaction by calling transaction function', async () => {
     await inbox.methods

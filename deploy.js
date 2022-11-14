@@ -17,9 +17,14 @@ const main = async () => {
     const contract = await new web3.eth.Contract(JSON.parse(abiCode))
       .deploy({
         data: biteCode,
+        arguments: ['hello there'],
       })
       .send({ from: accounts[1], gas: '1000000' })
-    console.log(contract)
+    console.log(
+      'Contract has been deployed to this address: ',
+      contract.options.address,
+    )
+    provider.engine.stop()
     process.exit()
   } catch (error) {
     console.log(error)
